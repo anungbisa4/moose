@@ -1,0 +1,11 @@
+# Ignore artifacts:
+.next
+.husky
+.storybook
+dummy
+public
+coverage
+node_modules
+yarn.lock
+build
+dist
