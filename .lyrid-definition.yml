@@ -1,0 +1,12 @@
+name: Moose
+description: App Description
+ignoreFiles: .git .next node_modules
+modules:
+  - name: v1
+    language: nodejs14.x
+    web: nextjs moose
+    description: Module description
+    functions:
+      - name: entry
+        entry: entry.js
+        description: the entry point for the function
