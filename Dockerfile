@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --production
+# # Install dependencies
+# RUN npm ci --production
 
 # Copy the rest of the app
 COPY . .
@@ -27,7 +27,9 @@ COPY --from=build /app/package*.json ./
 COPY --from=build /app/.next ./.next
 
 # Install only production dependencies
-RUN npm ci --production
+# RUN unset http_proxy
+# RUN unset https_proxy
+# RUN npm ci --production
 
 # Start the app
 CMD ["npm", "start"]
