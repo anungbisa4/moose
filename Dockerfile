@@ -9,6 +9,7 @@ COPY package*.json ./
 
 # # Install dependencies
 # RUN npm ci --production
+RUN npm install
 
 # Copy the rest of the app
 COPY . .
@@ -30,6 +31,7 @@ COPY --from=build /app/.next ./.next
 # RUN unset http_proxy
 # RUN unset https_proxy
 # RUN npm ci --production
+RUN npm install
 
 # Start the app
 CMD ["npm", "start"]
